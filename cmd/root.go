@@ -102,7 +102,7 @@ func init() {
 	rootCmd.PersistentFlags().StringVarP(&driveName, "drive", "d", "", "Drive name to store the files. (default: config.drivename)")
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default: $HOME/.dul.yaml)")
 
-	rootCmd.Flags().StringArrayVarP(&files, "files", "f", []string{}, "Array of files you want to upload.")
+	rootCmd.Flags().StringSliceVarP(&files, "files", "f", []string{}, "Array of files you want to upload.")
 }
 
 func initConfig() {
