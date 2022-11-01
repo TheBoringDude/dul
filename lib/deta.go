@@ -1,7 +1,9 @@
 package lib
 
 import (
+	"fmt"
 	"log"
+	"os"
 
 	"github.com/deta/deta-go/deta"
 	"github.com/deta/deta-go/service/drive"
@@ -9,6 +11,11 @@ import (
 
 // initializes new deta drive instance
 func InitDrive(projectKey string, driveName string) *drive.Drive {
+	if projectKey == "" {
+		fmt.Println("  [!] No project key specified, please set your project key by adding `--project-key` flag in command.")
+		os.Exit(1)
+	}
+
 	d, err := deta.New(deta.WithProjectKey(projectKey))
 
 	if err != nil {

@@ -118,6 +118,8 @@ func initConfig() {
 				cfgFile = path.Join(homePathDir, ".dul.yaml")
 			}
 
+			viper.Set("driveName", "main") // set default name of drive to `main`
+
 			if err = viper.WriteConfigAs(cfgFile); err != nil {
 				log.Fatalln(err)
 			}
