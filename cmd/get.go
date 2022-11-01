@@ -17,7 +17,7 @@ var getFile string
 var getCmd = &cobra.Command{
 	Use:   "get --file [file]",
 	Short: "Download file from drive.",
-	Long:  `Downloads a file from deta drive.`,
+	Long:  `Download / get a file from your drive.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if getFile == "" {
 			fmt.Println("No file name specified to download.")
